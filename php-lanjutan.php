@@ -1,6 +1,7 @@
 <?php
 
 $nama = "DONI" ;
+
 /*
 echo $nama ;
 echo "<br/>" ;
@@ -12,10 +13,10 @@ echo $nama ;
 echo "<br/>" ;
 echo $nama ;
 */
+
+// Perulangan
 /*
-$nomor = 10;
-
-
+$no = 100;
 for($i=0; $i<$no; $i++) {
     $n = $i + 1;
     echo $n." ". $nama. "<br/>";
@@ -33,7 +34,6 @@ echo $n." ". $nama. "<br/>";
 }
 */
 
-
 /*
 $no = 10;
 $i = 0 ;
@@ -46,6 +46,9 @@ do {
 */
 /*
 $data = array('Avanza','Tesla','Honda','Ayla','XPander','Panther');
+
+$i = 0 ;
+
 
 foreach ($data as $value){
     echo $value."<br>";
@@ -71,7 +74,7 @@ if ($nama = "Hida"){
     echo $nama. " Darimana ya?";
 }
 */
-
+/*
 switch ($nama) {
     case "Doni":
         $pesan = $nama. " adalah orang lampung";
@@ -84,4 +87,50 @@ switch ($nama) {
 
 }
 echo $pesan;
+*/
+
 ?>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Input Nama dan Diulang</h1>
+    <form action="<?php $_SERVER>['PHP_SELF']?> " method="post">
+        <Label>Nama</Label>
+        <input type="text" name="nama">
+        <label>Jumlah</label>
+        <input type="text" name="no">
+        <input type="submit" name="submit" value="submit">
+    </form>
+    <?php
+        if (! empty($_POST['submit'])){
+
+            switch($_POST['nama']){
+                case "Doni";
+                $pesan = $_POST ['nama']."adalah orang Lampung;
+                break;
+                case "Budi":
+                    $pesan = $_POST['nama']." berasal dari pulau Jawa";
+                Break;
+                default:
+                    $pesan = $_POST ['nama']."darimana ya?";
+            }
+        }
+
+        for ($i=0;$i<$_POST['no'];$i++) {
+            echo $pesan. "<br>";
+        }
+    } else {
+        echo "Anda belum input nama dan jumlah.";
+    }
+
+</body>
+</html>
